@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <div>
+            Planet period (days):<input type="Number" id="period"><br>
+            Impact parameter:<input type="Number" id="impact"><br>
+            Duration of transit (days):<input type="Number" id="duration"><br>
+            Stellar optical depth:<input type="Number" id="depth"><br>
+            Planet radius (earth radii):<input type="Number" id="prad"><br>
+            Planet equilibrium temperature (Kelvin):<input type="Number" id="teq"><br>
+            Insolation flux (as a ratio to that of Earth-Sun system):<input type="Number" id="insol"><br>
+            Model signal to noise ratio:<input type="Number" id="model_snr"><br>
+        </div>
+        <div>
+            <button id="submit"></button>
+        </div>
+        Our prediction is:
+        <table>
+            <tr><td>This candidate is</td><td id="hard_predict"></td></tr>
+            <tr><td>Probability of candidate being an exoplanet:</td><td id="soft_predict"></td></tr>
+        </table>
+    </body>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script>
+    $('#submit').click( () => { predict(); } );
+  
+    function predict(){
+        let features = {
+            'period': parseFloat($('#period').val()),
+            'impact': parseFloat($('#impact').val()),
+            'duration': parseFloat($('#duration').val()),
+            'depth': parseFloat($('#depth').val()),
+            'prad': parseFloat($('#prad').val()),
+            'teq': parseFloat($('#teq').val()),
+            'insol': parseFloat($('#insol').val()),
+            'model_snr': parseFloat($('#model_snr').val())
+        }
+
+        console.log(features);
+
+        $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        url: "/predict",  // Replace with URL of POST handler
+        dataType: "json",
+        async: true,
+        data: JSON.stringify(features),
+        success: (result) => {
+            $('#hard_predict').html(result['prediction'] ? 'an exoplanet' : 'not an exoplanet' );
+            $('#soft_predict').html(result['prob_planet']);
+        },
+        error: (result) => {
+            alert('An error occurred')
+        }
+        })
+
+  }
+    </script>
+
+</html>
