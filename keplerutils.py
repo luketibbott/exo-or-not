@@ -3,6 +3,9 @@
 
 from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import SMOTE
+from imblearn.under_sampling import TomekLinks
+from imblearn.under_sampling import EditedNearestNeighbours
+
 
 
 def encode_response(x):
@@ -59,3 +62,20 @@ def split_and_upsample_test(df):
     X_train_res, y_train_res = sm.fit_sample(X_train, y_train)
     
     return X_train, X_test, y_train, y_test
+
+def combo_resample(df):
+    '''
+    
+    '''
+    y = df.iloc[:, 0]
+    X = df.iloc[:, 1:]
+    
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state = 234238971, stratify=y)
+
+    sm = SMOTE()
+    tl = EditedNearestNeighbours()
+
+    X_train_sm, y_train_sm = sm.fit_sample(X_train, y_train)
+    X_train_tl, y_train_tl = tl.fit_sample(X_train_sm, y_train_sm)
+
+    return X_train_tl, X_test, y_train_tl, y_test
