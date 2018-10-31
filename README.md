@@ -1,5 +1,7 @@
 # exo-or-not
 
+**All code is contained in `model-kepler.ipynb`, `EDA-clean.ipynb`, `finalize-model.ipynb` and `keplerutils.py`**
+
 This project focuses on the classification of exoplanet candidates. It uses a dataset from NASAs exoplanet archive with 7,000 candidates. In the end I used a Random Forest model with .91 Recall and .90 AUC. 
 
 I also built a Flask app to make predictions on-demand.
