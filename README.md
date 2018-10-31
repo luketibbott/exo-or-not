@@ -21,3 +21,4 @@ Please read the project summary pdf for more information.
 * `model.pkl` a pickled version of my final model, trained on all my data. My Flask app uses this to make predictions
 * `proposal.pdf` my initial proposal for this project
 * `summary.pdf` summary of all my work in the project
+* `final.csv` cleaned data
