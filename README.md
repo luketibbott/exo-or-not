@@ -39,6 +39,7 @@ Python
    * Numpy
    * scikit-learn
    * imb-learn
+
 Google Docs
 Google Slides
 SQL (opted for challenge) Javascript
