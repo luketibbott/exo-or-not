@@ -34,15 +34,17 @@ I obtained my data from NASA’s Kepler Exoplanet Archive. Kepler is a NASA miss
 The dataset I used was the result of Kepler observing 200,000 stars and finding 9,564 “objects of interest.” Many of these objects of interest are still under consideration by NASA before they’re accepted as a full exoplanet, so those were thrown out. After removing these observations and doing a bit of data cleaning, I was left with 6,809 observations -- 4,524 disconfirmed (non-planet) objects and 2,285 confirmed planet objects, giving me a ratio of about 2 negative observations for every 1 positive observation.
 
 ## Tools
-Python
-● Pandas
-● Numpy
-● scikit-learn ● imb-learn
-Google Docs
-Google Slides
-SQL (opted for challenge) Javascript
-HTML
-Flask
+1. Python
+   * Pandas
+   * Numpy
+   * scikit-learn 
+   * imb-learn
+2. Google Docs
+3. Google Slides
+4. SQL
+5. Javascript
+6. HTML
+7. Flask
 
 I’m excited that I was able to build a functional Flask app for this project. I’ve been wanting to develop my Flask skills for a long time, but never had a good opportunity. I know Flask is an important skill for communicating between, for example, a data science department and a web development department. I feel like I added a new tool to my skill set, in that I now know how to create one of the main forms of deliverables for projects in a professional data science setting.
    
