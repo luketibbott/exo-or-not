@@ -35,9 +35,10 @@ The dataset I used was the result of Kepler observing 200,000 stars and finding 
 
 ## Tools
 Python
-● Pandas
-● Numpy
-● scikit-learn ● imb-learn
+   * Pandas
+   * Numpy
+   * scikit-learn
+   * imb-learn
 Google Docs
 Google Slides
 SQL (opted for challenge) Javascript
